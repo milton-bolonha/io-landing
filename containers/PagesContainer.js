@@ -1,8 +1,6 @@
 import React from "react";
-import { getAllPageSlugs } from "@/lib/pages";
 
-export default function PagesContainer() {
-  const slugs = getAllPageSlugs();
+export default function PagesContainer({ slugs = [] }) {
   return (
     <ul className="list-disc pl-6">
       {slugs.map((s) => (

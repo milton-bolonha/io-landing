@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
+import Link from "next/link";
 import { FiMenu, FiX, FiMoon, FiSun } from "react-icons/fi";
 
 const MENU = [
@@ -44,7 +45,7 @@ export default function Header({
       style={{ height: headerHeight }}
     >
       <div className="max-w-7xl mx-auto h-full px-4 flex items-center justify-between">
-        <a
+        <Link
           href="/"
           className="flex items-center gap-2"
           aria-label="Página inicial"
@@ -54,7 +55,7 @@ export default function Header({
           ) : (
             <span className={`${logoFontStyle} text-lg`}>{logoText}</span>
           )}
-        </a>
+        </Link>
 
         <nav
           className="hidden md:flex items-center gap-6"
@@ -62,13 +63,13 @@ export default function Header({
         >
           {showMainMenu &&
             MENU.map((item) => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
                 className="opacity-90 hover:opacity-100"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
         </nav>
 
@@ -120,9 +121,9 @@ export default function Header({
         >
           {showMainMenu &&
             MENU.map((item) => (
-              <a key={item.href} href={item.href} className="py-1">
+              <Link key={item.href} href={item.href} className="py-1">
                 {item.label}
-              </a>
+              </Link>
             ))}
         </nav>
       </div>
