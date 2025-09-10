@@ -3,6 +3,11 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Hero bleed behind header */
+main > section:first-of-type {
+  margin-top: calc(var(--header-height, 60px) * -1);
+}
+
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -80,7 +85,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #030014;
     --foreground: #ededed;
   }
 }
@@ -90,10 +95,15 @@ body {
   color: var(--foreground);
   font-family: "Inter Variable", sans-serif;
 }
-
+.Inter {
+  font-family: "Inter Variable", sans-serif;
+}
+.Geologica {
+  font-family: "Geologica Variable", sans-serif;
+}
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
+  --background: #030014;
+  --foreground: oklch(1 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
@@ -241,4 +251,35 @@ body {
 
 .prose hr {
   @apply border-gray-300 dark:border-gray-600 my-8;
+}
+
+/* Animações para testemunhos */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 30s linear infinite;
+}
+
+.animate-scroll-right {
+  animation: scroll-right 30s linear infinite;
+}
+
+.bg-black {
+  background-color: #030014;
 }

@@ -17,7 +17,7 @@ export default function Header({
   logoFontStyle = "font-semibold",
   logoAlign = "left",
   showMainMenu = true,
-  headerHeight = 60,
+  headerHeight = 80,
   isTransparent = false,
   stickyHeader = true,
 }) {
@@ -37,12 +37,12 @@ export default function Header({
   return (
     <header
       className={
-        "w-full z-30 " +
+        "w-full z-40 relative " +
         (stickyHeader ? "sticky top-0" : "") +
         " " +
-        (isTransparent ? "bg-transparent" : "bg-white dark:bg-black border-b")
+        "bg-white/40 dark:bg-black/20 backdrop-blur border-b border-white/20 dark:border-white/10"
       }
-      style={{ height: headerHeight }}
+      style={{ height: headerHeight, "--header-height": `${headerHeight}px` }}
     >
       <div className="max-w-7xl mx-auto h-full px-4 flex items-center justify-between">
         <Link
@@ -50,15 +50,15 @@ export default function Header({
           className="flex items-center gap-2"
           aria-label="Página inicial"
         >
-          {logoImage ? (
-            <img src={logoImage} alt={logoText} className="h-8 w-auto" />
-          ) : (
-            <span className={`${logoFontStyle} text-lg`}>{logoText}</span>
-          )}
+          <img
+            src="/images/logo-horizontal.png"
+            alt={logoText}
+            className="h-8 w-auto max-w-[350px]"
+          />
         </Link>
 
         <nav
-          className="hidden md:flex items-center gap-6"
+          className="hidden md:flex items-center gap-6 bg-white/5 border border-white/10 rounded-full px-4 py-2"
           aria-label="Menu principal"
         >
           {showMainMenu &&
@@ -66,7 +66,7 @@ export default function Header({
               <Link
                 key={item.href}
                 href={item.href}
-                className="opacity-90 hover:opacity-100"
+                className="opacity-90 hover:opacity-100 text-sm"
               >
                 {item.label}
               </Link>
@@ -86,7 +86,7 @@ export default function Header({
           >
             Ir Pra Loja
           </a>
-          <button
+          {/* <button
             aria-label="Alternar tema"
             onClick={() => setTheme(themeIsDark ? "light" : "dark")}
             className="p-2 rounded focus-visible:outline focus-visible:outline-2"
@@ -98,7 +98,7 @@ export default function Header({
             ) : (
               <FiMoon aria-hidden />
             )}
-          </button>
+          </button> */}
           <button
             className="md:hidden p-2"
             aria-label={open ? "Fechar menu" : "Abrir menu"}
@@ -109,22 +109,46 @@ export default function Header({
         </div>
       </div>
 
+      {/* Menu Mobile */}
       <div
         className={
           (open ? "block" : "hidden") +
-          " md:hidden border-t bg-white dark:bg-black"
+          " md:hidden absolute top-full left-0 right-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm border-t border-white/20 dark:border-white/10 shadow-lg"
         }
       >
         <nav
-          className="px-4 py-3 flex flex-col gap-3"
+          className="px-6 py-4 flex flex-col gap-1"
           aria-label="Menu principal (mobile)"
         >
           {showMainMenu &&
             MENU.map((item) => (
-              <Link key={item.href} href={item.href} className="py-1">
+              <Link
+                key={item.href}
+                href={item.href}
+                className="py-3 px-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                onClick={() => setOpen(false)}
+              >
                 {item.label}
               </Link>
             ))}
+
+          {/* Botões de ação no mobile */}
+          <div className="flex flex-col gap-2 pt-2 mt-2 border-t border-gray-200 dark:border-gray-700">
+            <a
+              href="#login"
+              className="text-sm px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 text-center transition-colors"
+              onClick={() => setOpen(false)}
+            >
+              Login
+            </a>
+            <a
+              href="#loja"
+              className="text-sm px-4 py-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-white text-center transition-colors"
+              onClick={() => setOpen(false)}
+            >
+              Ir Pra Loja
+            </a>
+          </div>
         </nav>
       </div>
     </header>
