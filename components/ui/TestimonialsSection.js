@@ -119,7 +119,7 @@ export default function TestimonialsSection() {
                     </div>
                   </div>
                   <p className="text-gray-700 dark:text-gray-300 italic">
-                    "{testimonial.text}"
+                    &ldquo;{testimonial.text}&rdquo;
                   </p>
                 </div>
               )
@@ -150,7 +150,7 @@ export default function TestimonialsSection() {
                     </div>
                   </div>
                   <p className="text-gray-700 dark:text-gray-300 italic">
-                    "{testimonial.text}"
+                    &ldquo;{testimonial.text}&rdquo;
                   </p>
                 </div>
               )
