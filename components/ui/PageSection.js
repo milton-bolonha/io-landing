@@ -128,10 +128,10 @@ export default function PageSection({
 
       <div className={containerClasses}>
         {(title || subtitle) && (
-          <header className="mb-6 text-center">
+          <header className="mb-6 text-center ">
             {title ? (
               <h2
-                className={`${titleSize} font-semibold tracking-tight mb-4 Geologica`}
+                className={`${titleSize} font-semibold tracking-tight mb-4 Geologica mt-26`}
                 dangerouslySetInnerHTML={{ __html: String(title) }}
               />
             ) : null}

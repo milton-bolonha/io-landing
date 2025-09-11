@@ -334,16 +334,16 @@ body {
 
 ```json
 {
-  "siteUrl": "https://moderntips.com",
-  "footerText": "Disclaimer: The content provided on this site is intended for general information purposes only and should not be considered a replacement for professional financial and/or medical advice. All materials, including text, graphics, images, and information, are subject to change without prior notice. The information, materials, terms, conditions, and descriptions presented on these pages are subject to change without prior notice.",
+  "siteUrl": "https://site.com",
+  "footerText": "Disclaimer: The content provided on this site is intended for general information purposes only and should not be considered a replacement for .... All materials, including text, graphics, images, and information, are subject to change without prior notice...",
   "postsToShow": 9,
   "homeCategory": "Health",
   "cookieConsent": false,
   "darkModeSwitcher": false,
-  "feedbackEmail": "general@moderntips.com",
+  "feedbackEmail": "general@site.com",
   "publishedDate": "2024-01-01 23:44:00",
   "i18n": "en-us",
-  "errorMessage": "Hmm... something is wrong, try again later or e-mail us: general@moderntips.com"
+  "errorMessage": "Hmm... something is wrong, try again later or e-mail us: general@site.com"
 }
 ```
 
@@ -352,15 +352,15 @@ body {
 ```json
 {
   "cloudinaryIntegration": {
-    "cloudApiKey": "232148336835128",
-    "cloudName": "dj0et6kq4",
-    "folderName": "moderntips"
+    "cloudApiKey": "00000000000",
+    "cloudName": "dj00000",
+    "folderName": "foderName"
   },
   "googleIntegration": {
-    "adsClientID": "ca-pub-4309295381222992",
-    "adsSlot": "2083202812",
-    "gaID": "G-WFBMSN7KBE",
-    "adsAccount": "sites-9053884276298326"
+    "adsClientID": "ca-pub-000000",
+    "adsSlot": "000000000000",
+    "gaID": "G-XXXXX",
+    "adsAccount": "sites-xxxx"
   }
 }
 ```
@@ -386,11 +386,11 @@ body {
 
 ```json
 {
-  "faviconLogo": "https://res.cloudinary.com/dj0et6kq4/image/upload/v1725537986/moderntips/assets/mt_favicon-16x16_1_swbclc.png",
-  "mainLogo": "https://res.cloudinary.com/dj0et6kq4/image/upload/v1725537989/moderntips/assets/mt_logo_2_yla5dj.png",
-  "markLogo": "https://res.cloudinary.com/dj0et6kq4/image/upload/v1725537985/moderntips/assets/mt_logomark_1_du5ief.png",
-  "cardLogo": "https://res.cloudinary.com/dj0et6kq4/image/upload/v1725537988/moderntips/assets/mt_cover_1_w0m81h.png",
-  "postAuthorLogo": "https://res.cloudinary.com/dj0et6kq4/image/upload/v1725537985/moderntips/assets/mt_logomark_1_du5ief.png",
+  "faviconLogo": "images/faviconLogo.png",
+  "mainLogo": "images/mainLogo.png",
+  "markLogo": "images/markLogo.png",
+  "cardLogo": "images/cardLogo.png",
+  "postAuthorLogo": "images/postAuthorLogo.png",
   "mainLogoWH": "183x50"
 }
 ```
@@ -467,10 +467,10 @@ body {
   "nextVersion": "1.1.0",
   "message": "No updates.",
   "update": false,
-  "gitEmail": "bschindelheim@gmail.com",
+  "gitEmail": "xxxxx@gmail.com",
   "beta": false,
   "version": "1.0.0",
-  "gitUser": "schindyguy",
+  "gitUser": "xxxxxxx",
   "automaticUpdates": false,
   "customNextSource": ""
 }
