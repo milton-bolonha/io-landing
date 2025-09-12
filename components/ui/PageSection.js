@@ -13,6 +13,7 @@ export default function PageSection({
   vPadding = "py-12",
   titleSize = "text-3xl",
   ctaBtnColor = "",
+  tagline = "",
   title = "",
   subtitle = "",
   ctaBtnText = "",
@@ -127,17 +128,35 @@ export default function PageSection({
       )}
 
       <div className={containerClasses}>
-        {(title || subtitle) && (
-          <header className="mb-6 text-center ">
+        {(tagline || title || subtitle) && (
+          <header className="mb-6 text-center mt-26">
+            {tagline ? (
+              <div
+                className="inline-flex items-center px-4 py-2 border mb-4 "
+                style={{
+                  background:
+                    "linear-gradient(90deg, rgba(229, 156, 255, 0.24) 0%, rgba(186, 156, 255, 0.24) 50%, rgba(156, 178, 255, 0.24) 100%)",
+                  borderColor: "#BA9CFF",
+                  borderRadius: "20px",
+                }}
+              >
+                <span
+                  className="text-sm font-medium"
+                  style={{ color: "#BA9CFF" }}
+                >
+                  {tagline}
+                </span>
+              </div>
+            ) : null}
             {title ? (
               <h2
-                className={`${titleSize} font-semibold tracking-tight mb-4 Geologica mt-26`}
+                className={`${titleSize} font-semibold tracking-tight mb-4 Geologica`}
                 dangerouslySetInnerHTML={{ __html: String(title) }}
               />
             ) : null}
             {subtitle ? (
               <p
-                className="mt-2 text-base opacity-80"
+                className="m-auto mt-5 mb-14 text-base opacity-80 max-w-[750px]"
                 dangerouslySetInnerHTML={{ __html: String(subtitle) }}
               />
             ) : null}

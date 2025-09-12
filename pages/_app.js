@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import "@fontsource-variable/inter";
 import "@fontsource-variable/geologica";
+import "@fontsource/space-mono";
 
 import { ThemeProvider } from "next-themes";
 

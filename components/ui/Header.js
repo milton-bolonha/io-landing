@@ -51,9 +51,14 @@ export default function Header({
           aria-label="Página inicial"
         >
           <img
+            src="/images/logo-mobile.png"
+            alt={logoText}
+            className="h-8 w-auto md:hidden"
+          />
+          <img
             src="/images/logo-horizontal.png"
             alt={logoText}
-            className="h-8 w-auto max-w-[350px]"
+            className="h-8 w-auto max-w-[350px] hidden md:block"
           />
         </Link>
 

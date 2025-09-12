@@ -101,6 +101,9 @@ body {
 .Geologica {
   font-family: "Geologica Variable", sans-serif;
 }
+.SpaceMono {
+  font-family: "Space Mono", monospace;
+}
 .dark {
   --background: #030014;
   --foreground: oklch(1 0 0);
