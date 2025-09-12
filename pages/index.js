@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Layout from "@/components/layout/Layout";
 import PageSection from "@/components/ui/PageSection";
 import StoriesSection from "@/components/ui/StoriesSection";
@@ -68,13 +69,13 @@ export default function Home({ featured, recent }) {
               <li>Conheça os nossos planos</li>
               <li>Ganhe brindes e descontos</li>
             </ul>
-            <a
+            <Link
               href="/contato"
               className="mt-8 inline-flex items-center justify-center rounded-md px-8 py-3 font-semibold cursor-pointer"
               style={{ backgroundColor: "#6949B1", color: "#FFFFFF" }}
             >
               Fale Conosco
-            </a>
+            </Link>
           </div>
         </div>
       </PageSection>
