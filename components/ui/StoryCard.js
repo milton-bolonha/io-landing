@@ -17,7 +17,7 @@ export default function StoryCard({ image, alt, isSelected, onClick }) {
       {/* Card principal */}
       <div
         className={`
-        relative overflow-hidden rounded-2xl shadow-lg
+        relative rounded-2xl shadow-lg
         transition-all duration-300 ease-out
         ${isSelected ? "shadow-2xl ring-4 ring-white" : "shadow-lg"}
         ${isHovered ? "shadow-xl" : ""}

@@ -4,6 +4,7 @@ export default function PageSection({
   isBoxed = true,
   bgImage = "",
   bgColor = " ",
+  backgroundSize = "cover",
   isFullHeight = false,
   fullHeightSubtract = "var(--header-height, 0px)",
   numColumns = 1,
@@ -90,7 +91,7 @@ export default function PageSection({
     const style = {};
     if (bgImage) {
       style.backgroundImage = `url(${bgImage})`;
-      style.backgroundSize = "cover";
+      style.backgroundSize = backgroundSize;
       style.backgroundPosition = "top center";
     }
     if (isFullHeight && fullHeightSubtract) {

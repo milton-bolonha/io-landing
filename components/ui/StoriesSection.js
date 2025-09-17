@@ -4,13 +4,14 @@ import StoryCard from "./StoryCard";
 export default function StoriesSection() {
   const [selectedCard, setSelectedCard] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedCardId, setSelectedCardId] = useState(null);
 
   const stories = [
     {
       id: 1,
       image: "/images/cards-1.png",
       alt: "Story 1",
-      title: "Mentoria em Liderança",
+      title: "Trilha Ignição",
       subtitle: "Desenvolva suas habilidades de liderança",
       content:
         "Aprenda as melhores práticas de liderança com mentores experientes que já lideraram equipes de sucesso em empresas globais. Desenvolva habilidades de comunicação, tomada de decisão e gestão de pessoas.",
@@ -19,7 +20,7 @@ export default function StoriesSection() {
       id: 2,
       image: "/images/cards-2.png",
       alt: "Story 2",
-      title: "Carreira Internacional",
+      title: "Semana Revolucionária",
       subtitle: "Expanda seus horizontes profissionais",
       content:
         "Descubra como construir uma carreira internacional de sucesso. Nossos mentores compartilham insights sobre mercado global, networking internacional e oportunidades de trabalho no exterior.",
@@ -28,7 +29,7 @@ export default function StoriesSection() {
       id: 3,
       image: "/images/cards-3.png",
       alt: "Story 3",
-      title: "Empreendedorismo",
+      title: "Job Internacionao em 30 Dias",
       subtitle: "Transforme sua ideia em negócio",
       content:
         "Do conceito à execução, aprenda com empreendedores que já construíram empresas de sucesso. Desenvolva mindset empreendedor, validação de ideias e estratégias de crescimento.",
@@ -37,7 +38,7 @@ export default function StoriesSection() {
       id: 4,
       image: "/images/cards-4.png",
       alt: "Story 4",
-      title: "Tecnologia e Inovação",
+      title: "Projeto Você StartUP",
       subtitle: "Mantenha-se atualizado com as tendências",
       content:
         "Explore as últimas tendências tecnológicas e como aplicá-las no seu trabalho. Desde IA até blockchain, nossos mentores te ajudam a navegar no mundo da tecnologia.",
@@ -46,7 +47,7 @@ export default function StoriesSection() {
       id: 5,
       image: "/images/cards-5.png",
       alt: "Story 5",
-      title: "Desenvolvimento Pessoal",
+      title: "Especialista Mentor",
       subtitle: "Invista em seu crescimento pessoal",
       content:
         "Trabalhe suas soft skills, inteligência emocional e autoconhecimento. Nossos mentores te ajudam a desenvolver as competências essenciais para o sucesso profissional.",
@@ -55,7 +56,7 @@ export default function StoriesSection() {
       id: 6,
       image: "/images/cards-6.png",
       alt: "Story 6",
-      title: "Networking Estratégico",
+      title: "Bushido 3.0",
       subtitle: "Construa relacionamentos valiosos",
       content:
         "Aprenda a construir e manter uma rede de contatos estratégica. Descubra como fazer networking efetivo e criar relacionamentos profissionais duradouros.",
@@ -63,13 +64,23 @@ export default function StoriesSection() {
   ];
 
   const handleCardClick = (story) => {
-    setSelectedCard(story);
-    setIsModalOpen(true);
+    // Se clicar no mesmo card selecionado, deseleciona
+    if (selectedCardId === story.id) {
+      setSelectedCardId(null);
+      setSelectedCard(null);
+      setIsModalOpen(false);
+    } else {
+      // Seleciona o novo card e abre modal
+      setSelectedCardId(story.id);
+      setSelectedCard(story);
+      setIsModalOpen(true);
+    }
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
     setSelectedCard(null);
+    setSelectedCardId(null);
   };
 
   return (
@@ -106,7 +117,7 @@ export default function StoriesSection() {
               key={story.id}
               image={story.image}
               alt={story.alt}
-              isSelected={false}
+              isSelected={selectedCardId === story.id}
               onClick={() => handleCardClick(story)}
             />
           ))}
@@ -114,8 +125,14 @@ export default function StoriesSection() {
 
         {/* Modal */}
         {isModalOpen && selectedCard && (
-          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-            <div className="bg-white dark:bg-gray-800 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+          <div
+            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
+            onClick={closeModal}
+          >
+            <div
+              className="bg-white/65 dark:bg-gray-800/65 backdrop-blur-sm rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
               <div className="p-8">
                 {/* Header do modal */}
                 <div className="flex justify-between items-start mb-6">

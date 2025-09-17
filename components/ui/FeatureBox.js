@@ -13,13 +13,7 @@ export default function FeatureBox({
   })();
 
   return (
-    <div
-      className="rounded-4xl p-6 md:p-8 "
-      style={{
-        background:
-          "linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 60%, rgba(255,255,255,0) 100%)",
-      }}
-    >
+    <div className="rounded-4xl p-6 md:p-8">
       <h3 className="Inter text-2xl md:text-3xl font-normal mb-3">{title}</h3>
       {paragraph ? (
         typeof paragraph === "string" ? (
@@ -38,19 +32,21 @@ export default function FeatureBox({
         {items.map((text, idx) => (
           <li
             key={idx}
-            className="rounded-lg px-4 py-3 bg-no-repeat bg-left-top SpaceMono"
+            className="flex items-center rounded-lg px-4 py-3 SpaceMono"
             style={{
-              backgroundImage: `url(${itemBgUrl})`,
-              backgroundSize: "cover",
+              background: "rgba(255, 255, 255, 0.1)",
+              border: "1px solid rgba(255, 255, 255, 0.2)",
               color: "#F4F0FF",
               fontSize: "16px",
-              textIndent: "60px",
-              lineHeight: "56px",
-              padding: "0",
               fontWeight: "600",
             }}
           >
-            {text}
+            <img
+              src={itemBgUrl}
+              alt="checkbox"
+              className="w-6 h-6 mr-4 flex-shrink-0"
+            />
+            <span>{text}</span>
           </li>
         ))}
       </ul>

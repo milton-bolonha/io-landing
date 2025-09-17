@@ -87,6 +87,7 @@ export default function Home({ featured, recent }) {
         isFullHeight
         vPadding="pt-60"
         bgImage="images/bg-3.jpg"
+        backgroundSize="unset"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
           <FeatureBox
@@ -112,7 +113,7 @@ export default function Home({ featured, recent }) {
             items={[
               "Mentoria Semanal Especializada",
               "Tecnologia de Ponta",
-              "Produtos, Serviços e Planos de Ação",
+              "Manuais Exclusivos, Métodos Comprovados",
               "Inteligência Artificial Ilimitada",
               "Métodos Inclusivos e Humanizados",
               "Material Didático, Livros e Mais...",
