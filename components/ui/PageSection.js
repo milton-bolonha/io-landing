@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function PageSection({
+  id = "",
   isBoxed = true,
   bgImage = "",
   bgColor = " ",
@@ -105,6 +106,7 @@ export default function PageSection({
 
   return (
     <section
+      id={id || undefined}
       className={wrapperClasses}
       style={Object.keys(sectionStyle).length ? sectionStyle : undefined}
       aria-label={title || undefined}

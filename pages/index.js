@@ -12,13 +12,14 @@ export default function Home({ featured, recent }) {
   return (
     <Layout>
       <PageSection
+        id="home"
         title="Revolucione!"
         titleSize="text-4xl md:text-6xl"
         subtitle="Os Mentores do Instituto Organizacionista vão te equipar<br />para o novo mercado internacional de trabalho.<br />Nova turma de Mentoria I/O aberta — vagas limitadas"
         ctaBtnText="Encontre Um/a Mentor/a"
-        ctaBtnLink="#"
+        ctaBtnLink="#mentoria"
         ctaContrastBtnText="Seja Mentor/a"
-        ctaContrastBtnLink="#"
+        ctaContrastBtnLink="#contato"
         ctaContrastBtnPosition="center"
         ctaBtnColor="rgb(255,105,0)"
         isFullHeight
@@ -28,9 +29,12 @@ export default function Home({ featured, recent }) {
         bgImage="images/main-bg.jpg"
       />
 
-      <StoriesSection />
+      <section id="mentoria">
+        <StoriesSection />
+      </section>
 
       <PageSection
+        id="sobre"
         title="Testemunhos Reais"
         titleSize="text-4xl md:text-6xl"
         subtitle="Após mudarmos as vidas de pessoas simples, impactando de forma real, nossos mentorados conquistam os seus cliente e seus próprios testemunhos."
@@ -43,6 +47,7 @@ export default function Home({ featured, recent }) {
       </PageSection>
 
       <PageSection
+        id="contato"
         title="Agende A Sua Primeira Mentoria"
         titleSize="text-6xl relative -top-40 mt-44"
         tagline="Comece pelo básico"
@@ -81,6 +86,7 @@ export default function Home({ featured, recent }) {
       </PageSection>
 
       <PageSection
+        id="planos"
         title="Receba Super Poderes"
         titleSize="text-4xl md:text-6xl"
         subtitle="Você aprenderá habilidades diversas, receberá tecnologia de ponta gratuita e terá a disposição ferramentas para lucrar com os seus novos superpoderes."
@@ -122,22 +128,6 @@ export default function Home({ featured, recent }) {
           />
         </div>
       </PageSection>
-      <PageSection
-        title="Revolucione!"
-        titleSize="text-4xl md:text-6xl"
-        subtitle="Os Mentores do Instituto Organizacionista vão te equipar<br />para o novo mercado internacional de trabalho.<br />Nova turma de Mentoria I/O aberta — vagas limitadas"
-        ctaBtnText="Encontre Um/a Mentor/a"
-        ctaBtnLink="#"
-        ctaContrastBtnText="Seja Mentor/a"
-        ctaContrastBtnLink="#"
-        ctaContrastBtnPosition="center"
-        ctaBtnColor="rgb(255,105,0)"
-        isFullHeight
-        fullHeightSubtract="10vh"
-        vPadding="py-20"
-        maxWidth="max-w-[550px]"
-        bgImage="images/main-bg.jpg"
-      />
       {/* <PageSection title="Posts em destaque" numColumns={3}>
         {featured.map((p) => (
           <PostCard key={p.slug} post={p} />

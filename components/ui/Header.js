@@ -4,11 +4,11 @@ import Link from "next/link";
 import { FiMenu, FiX, FiMoon, FiSun } from "react-icons/fi";
 
 const MENU = [
-  { label: "Home", href: "/" },
-  { label: "Quem Somos", href: "/sobre" },
-  { label: "Nossa Mentoria", href: "/mentoria" },
-  { label: "Planos", href: "/planos" },
-  { label: "Contato", href: "/contato" },
+  { label: "Home", href: "#home" },
+  { label: "Mentorias", href: "#mentoria" },
+  { label: "Testemunhos", href: "#sobre" },
+  { label: "Planos", href: "#planos" },
+  { label: "Agende Já", href: "#contato" },
 ];
 
 export default function Header({
