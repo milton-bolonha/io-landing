@@ -69,7 +69,7 @@ export default function Home({ featured, recent }) {
             >
               <li>Aprenda com o nosso método</li>
               <li>Equipe-se com ferramentas</li>
-              <li>Receba a primeira seção grátis</li>
+              <li>Sessão de degustação grátis</li>
               <li>Acesse o nosso catálogo</li>
               <li>Conheça os nossos planos</li>
               <li>Ganhe brindes e descontos</li>
