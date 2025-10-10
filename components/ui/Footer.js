@@ -61,7 +61,7 @@ export default function Footer({
           <div className="text-center">
             <div className="max-w-4xl mx-auto">
               <blockquote className="text-2xl md:text-3xl font-light leading-relaxed mb-6 italic">
-                "Do nada, vem apenas o nada."
+                {`"Do nada, vem apenas o nada."`}
               </blockquote>
               <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
                 Se queremos determinar resultados, devemos lapidar
