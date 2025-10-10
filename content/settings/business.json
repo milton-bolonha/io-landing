@@ -1,7 +1,15 @@
 {
-  "brandName": "XXXXX",
-  "brandDescription": "XXXX is here to deliver tips and tricks to live a better life.",
-  "brandEmail": "general@xxxx.com",
-  "brandKeywords": ["Modern Tips", "news", "boilerplate", "nextjs", "theme"],
-  "brandPhone": "+1"
+  "brandName": "Instituto Organizacionista",
+  "brandDescription": "Mentoria especializada em tecnologia e carreira internacional. Transformamos profissionais através de acompanhamento individual e metodologia comprovada.",
+  "brandEmail": "contato@instituto-organizacionista.com",
+  "brandKeywords": [
+    "mentoria",
+    "tecnologia",
+    "carreira internacional",
+    "freelancer",
+    "startup",
+    "programação",
+    "desenvolvimento web"
+  ],
+  "brandPhone": "+55 12 98106-2959"
 }

@@ -6,9 +6,8 @@ import { FiMenu, FiX, FiMoon, FiSun } from "react-icons/fi";
 const MENU = [
   { label: "Home", href: "#home" },
   { label: "Mentorias", href: "#mentoria" },
-  { label: "Testemunhos", href: "#sobre" },
-  { label: "Planos", href: "#planos" },
-  { label: "Agende Já", href: "#contato" },
+  { label: "Como Funciona", href: "#cronograma" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 export default function Header({

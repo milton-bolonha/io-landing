@@ -4,6 +4,12 @@ import Layout from "@/components/layout/Layout";
 import PageSection from "@/components/ui/PageSection";
 import StoriesSection from "@/components/ui/StoriesSection";
 import TestimonialsSection from "@/components/ui/TestimonialsSection";
+import StatsSection from "@/components/ui/StatsSection";
+import TimelineSection from "@/components/ui/TimelineSection";
+import ComparisonSection from "@/components/ui/ComparisonSection";
+import ScheduleSection from "@/components/ui/ScheduleSection";
+import FAQSection from "@/components/ui/FAQSection";
+import FloatingBadge from "@/components/ui/FloatingBadge";
 import { getFeaturedPosts, getAllPosts } from "@/lib/posts";
 import PostCard from "@/components/ui/PostCard";
 import FeatureBox from "@/components/ui/FeatureBox";
@@ -15,9 +21,9 @@ export default function Home({ featured, recent }) {
         id="home"
         title="Revolucione!"
         titleSize="text-4xl md:text-6xl"
-        subtitle="Os Mentores do Instituto Organizacionista vão te equipar<br />para o novo mercado internacional de trabalho.<br />Nova turma de Mentoria I/O aberta — vagas limitadas"
-        ctaBtnText="Encontre Um/a Mentor/a"
-        ctaBtnLink="#mentoria"
+        subtitle="Nossos mentores vão te equipar para o sucesso<br />no novo mercado de trabalho."
+        ctaBtnText="Fale Com Um/a Mentor/a"
+        ctaBtnLink="https://wa.me/5512981062959"
         ctaContrastBtnText="Seja Mentor/a"
         ctaContrastBtnLink="#contato"
         ctaContrastBtnPosition="center"
@@ -32,6 +38,21 @@ export default function Home({ featured, recent }) {
       <section id="mentoria">
         <StoriesSection />
       </section>
+
+      {/* Seção de Estatísticas */}
+      <StatsSection />
+
+      {/* Seção de Timeline */}
+      <TimelineSection />
+
+      {/* Seção de Comparativo */}
+      <ComparisonSection />
+
+      {/* Seção de Cronograma */}
+      <ScheduleSection />
+
+      {/* Seção FAQ */}
+      <FAQSection />
 
       <PageSection
         id="sobre"
@@ -74,13 +95,15 @@ export default function Home({ featured, recent }) {
               <li>Conheça os nossos planos</li>
               <li>Ganhe brindes e descontos</li>
             </ul>
-            <Link
-              href="/contato"
+            <a
+              href="https://wa.me/5512981062959"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-8 inline-flex items-center justify-center rounded-md px-8 py-3 font-semibold cursor-pointer"
               style={{ backgroundColor: "#6949B1", color: "#FFFFFF" }}
             >
-              Fale Conosco
-            </Link>
+              Fale Com Um/a Mentor/a
+            </a>
           </div>
         </div>
       </PageSection>
@@ -128,6 +151,10 @@ export default function Home({ featured, recent }) {
           />
         </div>
       </PageSection>
+
+      {/* Badge flutuante */}
+      <FloatingBadge />
+
       {/* <PageSection title="Posts em destaque" numColumns={3}>
         {featured.map((p) => (
           <PostCard key={p.slug} post={p} />
